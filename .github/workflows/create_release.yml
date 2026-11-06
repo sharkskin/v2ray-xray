@@ -78,3 +78,4 @@ jobs:
                 ref: `tags/${rel.tag_name}`
               }).catch(err => console.log(`Skip tag ${rel.tag_name}: ${err.message}`));
             }
+retention-days: 7
