@@ -35,6 +35,7 @@ jobs:
             }).catch(() => ({ data: null }));
             return latest ? latest.tag_name: "";
           result-encoding: string
+          retention-days: 7
 
       - name: Create release and cleanup old ones
         if: ${{ steps.version.outputs.file_version != steps.latest.outputs.tag }}
@@ -78,4 +79,4 @@ jobs:
                 ref: `tags/${rel.tag_name}`
               }).catch(err => console.log(`Skip tag ${rel.tag_name}: ${err.message}`));
             }
-retention-days: 7
+
